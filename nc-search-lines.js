@@ -111,6 +111,40 @@ class NcSearchLines extends mixinBehaviors([AppLocalizeBehavior], MixinSearch(Po
                 </ul>
               </div>
             </template>
+
+            <template is="dom-if" if="{{_checkSearchType('suuplier')}}">
+              <p class="lines-empty">{{localize('SEARCH_LINES_NOT_LINES_SUPPLIER')}}</p>
+              <div class="lines-empty tips">
+                <span>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIPS')}}</span>
+                <ul>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_CODE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_NAME')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_TAX_IDENTIFICATION_CODE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_TELEPHONE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_EMAIL')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_ADDRESS')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_CITY')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_POSTAL_CODE')}}</li>
+                </ul>
+              </div>
+            </template>
+
+            <template is="dom-if" if="{{_checkSearchType('warehouse')}}">
+              <p class="lines-empty">{{localize('SEARCH_LINES_NOT_LINES_WAREHOUSE')}}</p>
+              <div class="lines-empty tips">
+                <span>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIPS')}}</span>
+                <ul>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_CODE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_NAME')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_TAX_IDENTIFICATION_CODE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_TELEPHONE')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_EMAIL')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_ADDRESS')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_CITY')}}</li>
+                  <li>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIP_POSTAL_CODE')}}</li>
+                </ul>
+              </div>
+            </template>
           </template>
         </div>
       </paper-card>
@@ -193,7 +227,7 @@ class NcSearchLines extends mixinBehaviors([AppLocalizeBehavior], MixinSearch(Po
     if (this.linesData){
       if (this.linesData.length == 1){
         if (this.searchType == 'product') {
-          console.log(this.linesData);
+          //console.log(this.linesData);
           this.dispatchEvent(new CustomEvent('product-selected', {detail: this.linesData[0], bubbles: true, composed: true }));
         } else {
           this.dispatchEvent(new CustomEvent('customer-selected', {detail: this.linesData[0], bubbles: true, composed: true }));

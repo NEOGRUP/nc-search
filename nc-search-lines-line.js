@@ -275,7 +275,7 @@ class NcSearchLinesLine extends MixinSearch(PolymerElement) {
   }
 
   _isCustomerLine(searchType){
-    return (searchType=='customer');
+    return ((searchType=='customer') || (searchType=='warehouse') || (searchType=='supplier'));
   }
 
   _selectLine() {
