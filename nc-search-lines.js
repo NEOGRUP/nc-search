@@ -112,7 +112,7 @@ class NcSearchLines extends mixinBehaviors([AppLocalizeBehavior], MixinSearch(Po
               </div>
             </template>
 
-            <template is="dom-if" if="{{_checkSearchType('suuplier')}}">
+            <template is="dom-if" if="{{_checkSearchType('supplier')}}">
               <p class="lines-empty">{{localize('SEARCH_LINES_NOT_LINES_SUPPLIER')}}</p>
               <div class="lines-empty tips">
                 <span>{{localize('SEARCH_LINES_NOT_LINES_CUSTOMER_TIPS')}}</span>
